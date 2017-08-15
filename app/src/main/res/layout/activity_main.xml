@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.moringaschool.eatout.MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_restaurant"
+        android:contentDescription="@string/restaurant_image"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_eat_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eat_out_kenya"
+        android:layout_marginTop="35dp"
+        android:textSize="40sp"
+        android:textColor="@color/textIconColor"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_height="wrap_content"
+        android:text="@string/find_restaurant"
+        android:id="@+id/btn_find_restaurant"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@color/colorAccent"
+        android:textColor="@color/textIconColor" />
+
+    <EditText
+        android:id="@+id/et_zip_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_find_restaurant"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:ems="10"
+        android:textColor="@color/textIconColor"
+        android:inputType="textPersonName"
+        android:hint="@string/enter_zip_code" />
+
+</RelativeLayout>

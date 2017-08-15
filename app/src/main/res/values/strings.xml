@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Eat Out</string>
+    <string name="eat_out_kenya">Eat Out Kenya</string>
+    <string name="restaurant_image">restaurant image</string>
+    <string name="find_restaurant">Find Restaurant</string>
+    <string name="enter_zip_code">Enter zip code</string>
+    <string name="location_text">Here are all the restaurants near: %1$s</string>
+</resources>
