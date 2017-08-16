@@ -4,5 +4,5 @@
     <string name="restaurant_image">restaurant image</string>
     <string name="find_restaurant">Find Restaurant</string>
     <string name="enter_zip_code">Enter zip code</string>
-    <string name="location_text">Here are all the restaurants near: %1$s</string>
+    <string name="location_text">Here are all restaurants near: %1$s</string>
 </resources>
