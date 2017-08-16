@@ -5,10 +5,17 @@
     android:layout_height="match_parent"
     tools:context="com.moringaschool.eatout.RestaurantsActivity">
 
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
     <ListView android:id="@+id/lv_restaurants"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_location"
+        android:layout_alignParentEnd="true">
 
     </ListView>
 

@@ -3,11 +3,18 @@ package com.moringaschool.eatout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RestaurantsActivity extends AppCompatActivity {
+    String[] restaurants = new String[]{"Midland", "Ole Sereni",
+            "Hilton", "Highlands", "White Rhino", "White waters",
+            "Anghiti", "Spur Steak Ranches", "Java", "Subway",
+            "Senate", "Blue Post Hotel", "Blue Springs Hotel", "Sportman Arms"};
     TextView mTvLocation;
     ListView mListView;
     @Override
@@ -23,8 +30,16 @@ public class RestaurantsActivity extends AppCompatActivity {
         mTvLocation.setText(loc);
 
         mListView = (ListView) findViewById(R.id.lv_restaurants);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, restaurants);
         mListView.setAdapter(adapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String restaurant = ((TextView)view).getText().toString();
+                Toast.makeText(RestaurantsActivity.this, restaurant, Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }
