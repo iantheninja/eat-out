@@ -10,18 +10,21 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class RestaurantsActivity extends AppCompatActivity {
     String[] restaurants = new String[]{"Midland", "Ole Sereni",
             "Hilton", "Highlands", "White Rhino", "White waters",
             "Anghiti", "Spur Steak Ranches", "Java", "Subway",
             "Senate", "Blue Post Hotel", "Blue Springs Hotel", "Sportman Arms"};
-    TextView mTvLocation;
-    ListView mListView;
+    @Bind(R.id.tv_location) TextView mTvLocation;
+    @Bind(R.id.lv_restaurants) ListView mListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurants);
-        mTvLocation = (TextView) findViewById(R.id.tv_location);
+        ButterKnife.bind(this);
 
         Intent intent = getIntent();
         String zip = intent.getStringExtra("location");
@@ -29,7 +32,6 @@ public class RestaurantsActivity extends AppCompatActivity {
         String loc = getString(R.string.location_text, zip);
         mTvLocation.setText(loc);
 
-        mListView = (ListView) findViewById(R.id.lv_restaurants);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, restaurants);
         mListView.setAdapter(adapter);
 
