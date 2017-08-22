@@ -42,6 +42,5 @@ public class RestaurantsActivity extends AppCompatActivity {
                 Toast.makeText(RestaurantsActivity.this, restaurant, Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }
