@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +17,9 @@ public class RestaurantsActivity extends AppCompatActivity {
             "Hilton", "Highlands", "White Rhino", "White waters",
             "Anghiti", "Spur Steak Ranches", "Java", "Subway",
             "Senate", "Blue Post Hotel", "Blue Springs Hotel", "Sportman Arms"};
+    String[] cuisines = new String[]{"Vegan Food", "Breakfast", "Asian Food",
+            "Coffee", "Tea", "Mexican Food", "West African", "Noodle Soups",
+            "English Food", "Burgers", "East African", "Fast Food", "Salads", "Drinks" };
     @Bind(R.id.tv_location) TextView mTvLocation;
     @Bind(R.id.lv_restaurants) ListView mListView;
     @Override
@@ -32,7 +34,8 @@ public class RestaurantsActivity extends AppCompatActivity {
         String loc = getString(R.string.location_text, zip);
         mTvLocation.setText(loc);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, restaurants);
+        MyRestaurantsArrayAdapter adapter = new MyRestaurantsArrayAdapter(this,
+                android.R.layout.simple_list_item_1, restaurants, cuisines);
         mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
